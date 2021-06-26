@@ -13,7 +13,7 @@
       bottom-0
     "
   >
-    <NuxtLink class="rounded p-2" to="/">
+    <NuxtLink class="rounded p-2" to="/Home">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="m-auto h-6 w-6"
@@ -30,7 +30,7 @@
       </svg>
       <div>Home</div>
     </NuxtLink>
-    <NuxtLink class="rounded p-2" to="#">
+    <NuxtLink class="rounded p-2" to="/Home">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="m-auto h-6 w-6"
