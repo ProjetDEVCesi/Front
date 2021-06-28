@@ -20,8 +20,8 @@
         />
         <button
           class="
-            bg-red-500
-            text-white text-xs
+            bg-white
+            text-xs
             font-bold
             justify-center
             rounded-full
@@ -29,6 +29,9 @@
             w-3/4
             h-6
           "
+          :disabled="isActive"
+          :class="{ 'bg-red-600 text-white': isActive }"
+          @click="toggle"
         >
           Delivery
         </button>
@@ -43,6 +46,9 @@
             w-3/4
             h-6
           "
+          :disabled="!isActive"
+          :class="{ 'bg-red-600 text-white': !isActive }"
+          @click="toggle"
         >
           Pickup
         </button>
@@ -122,6 +128,22 @@ import RestauCard from '@/components/RestauCard'
 export default {
   components: {
     RestauCard,
+  },
+
+  data() {
+    return {
+      isActive: true,
+    }
+  },
+
+  methods: {
+    toggle() {
+      if (!this.isActive) {
+        this.isActive = true
+      } else {
+        this.isActive = false
+      }
+    },
   },
 }
 </script>
