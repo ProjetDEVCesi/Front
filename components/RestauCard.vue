@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/">
+  <NuxtLink to="/Menu">
     <div
       class="relative shadow-md rounded-lg bg-gray-200 m-auto my-8 h-40 w-4/5"
     >
@@ -23,7 +23,7 @@
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               />
             </svg>
-          </button> 
+          </button>
         </div>
         <div class="absolute text-xs text-white bottom-0 mx-6 my-4">
           1.99 € Delivery Fee • 15 - 25 min
