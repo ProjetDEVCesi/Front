@@ -17,6 +17,23 @@
     <TextAreaCard />
     <SelectCard />
     <CheckboxCard />
+    <div
+      class="
+        fixed
+        border
+        flex
+        items-center
+        shadow-md
+        bg-white
+        w-full
+        h-20
+        bottom-0
+      "
+    >
+      <button class="rounded bg-red-500 text-white font-bold m-auto w-2/3 py-2">
+        Add Item
+      </button>
+    </div>
   </div>
 </template>
 
