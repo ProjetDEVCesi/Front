@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-gray-200">
+  <div class="bg-gray-200 h-screen">
     <div class="bg-white pb-2">
-      <div class="shadow-md bg-gray-900 w-full h-32"></div>
+      <div class="shadow-md bg-gray-900 w-full h-32">
+        <XButton />
+      </div>
       <p class="font-bold text-2xl mx-8 mt-4">Menu Tacos</p>
       <div class="flex mx-8 mt-4">
         <p class="inline-flex text-gray-400 text-xs mx-2 mb-8 h-5">
@@ -23,6 +25,7 @@ import RadioCard from '@/components/RadioCard'
 import TextAreaCard from '@/components/TextAreaCard'
 import SelectCard from '@/components/SelectCard'
 import CheckboxCard from '@/components/CheckboxCard'
+import XButton from '@/components/XButton'
 
 export default {
   components: {
@@ -30,6 +33,7 @@ export default {
     TextAreaCard,
     SelectCard,
     CheckboxCard,
+    XButton,
   },
   layout: 'NoNav',
 }

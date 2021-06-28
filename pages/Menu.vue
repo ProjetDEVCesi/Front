@@ -1,7 +1,9 @@
 <template>
   <div class="bg-gray-200 h-screen">
     <div class="bg-white pb-2">
-      <div class="shadow-md bg-gray-900 w-full h-32"></div>
+      <div class="shadow-md bg-gray-900 w-full h-32">
+        <BackButton />
+      </div>
       <p class="font-bold text-2xl mx-8 mt-4">O'Tacos</p>
       <p class="text-gray-400 text-xs mx-8 mt-1">Tacos • Fries</p>
       <div class="flex mx-8 mt-4">
@@ -49,10 +51,12 @@
 
 <script>
 import MenuCard from '@/components/MenuCard'
+import BackButton from '@/components/BackButton'
 
 export default {
   components: {
     MenuCard,
+    BackButton,
   },
   layout: 'NoNav',
 }

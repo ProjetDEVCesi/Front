@@ -5,6 +5,8 @@
       <div
         class="
           absolute
+          flex
+          items-center
           rounded-full
           border-4 border-white
           bg-gray-300
