@@ -31,6 +31,6 @@ export default {
     SelectCard,
     CheckboxCard,
   },
-  layout: 'RestauMenu',
+  layout: 'NoNav',
 }
 </script>

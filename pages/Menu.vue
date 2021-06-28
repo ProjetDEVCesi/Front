@@ -54,6 +54,6 @@ export default {
   components: {
     MenuCard,
   },
-  layout: 'RestauMenu',
+  layout: 'NoNav',
 }
 </script>
