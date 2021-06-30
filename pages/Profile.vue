@@ -71,7 +71,7 @@
           18 rue de La Place, 62000 Arras
         </div>
       </div>
-      <div class="flex bg-gray-200 m-auto mt-10 w-4/5 h-1"></div>
+      <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
     <div>
       <NuxtLink class="flex items-center mx-8 mt-10" to="/ComingSoon">

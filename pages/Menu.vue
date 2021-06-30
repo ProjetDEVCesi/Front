@@ -38,7 +38,7 @@
         Plagueis was a Dark Lord of the Sith, so powerful and so wise he could
         use the Force to influence the midichlorians to create life…"
       </div>
-      <div class="flex rounded bg-gray-300 m-auto my-4 w-5/6 h-1"></div>
+      <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
     <p class="font-bold text-2xl mx-8 my-4">Menus</p>
     <MenuCard />

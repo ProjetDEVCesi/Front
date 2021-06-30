@@ -109,7 +109,7 @@
           </svg>
         </button>
       </div>
-      <div class="flex rounded bg-gray-300 m-auto mt-4 w-5/6 h-1"></div>
+      <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
       <div
         class="flex flex-nowrap overflow-x-auto mt-2 px-6 w-full no-scrollbar"
       >
