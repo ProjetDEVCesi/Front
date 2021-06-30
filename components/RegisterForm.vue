@@ -9,7 +9,7 @@
           class="block text-gray-700 text-sm font-bold mb-2"
           for="username"
         >
-          Username
+          First Name
         </label>
         <input
           type="text"
@@ -23,11 +23,35 @@
             px-3
             text-gray-700
             leading-tight
-            ocus:outline-none
-            focus:shadow-outline
+            focus:outline-none focus:shadow-outline
           "
           name="username"
-          placeholder="Username"
+          placeholder="First Name"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="username"
+        >
+          Last Name
+        </label>
+        <input
+          type="text"
+          class="
+            shadow
+            appearance-none
+            border
+            rounded
+            w-full
+            py-2
+            px-3
+            text-gray-700
+            leading-tight
+            focus:outline-none focus:shadow-outline
+          "
+          name="username"
+          placeholder="Last Name"
         />
       </div>
       <div class="mb-4">
@@ -49,20 +73,19 @@
             px-3
             text-gray-700
             leading-tight
-            ocus:outline-none
-            focus:shadow-outline
+            focus:outline-none focus:shadow-outline
           "
           name="email"
           placeholder="Email"
         />
+      </div>
+      <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
           for="username"
         >
           Password
         </label>
-      </div>
-      <div class="mb-4">
         <input
           type="password"
           class="
@@ -75,8 +98,7 @@
             px-3
             text-gray-700
             leading-tight
-            ocus:outline-none
-            focus:shadow-outline
+            focus:outline-none focus:shadow-outline
           "
           name="password"
           placeholder="Password"
@@ -101,8 +123,7 @@
             px-3
             text-gray-700
             leading-tight
-            ocus:outline-none
-            focus:shadow-outline
+            focus:outline-none focus:shadow-outline
           "
           name="confirm_password"
           placeholder="Confirm Password"

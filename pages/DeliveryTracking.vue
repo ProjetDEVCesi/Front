@@ -51,13 +51,13 @@
       </div>
     </div>
     <div v-show="seen == 2" class="m-auto w-1/2 mt-20">
-      <p class="font-bold text-gray-400">Food is being prepared</p>
+      <p class="font-bold">Food is being prepared</p>
     </div>
     <div v-show="seen == 3" class="m-auto w-1/2 mt-20">
-      <p class="font-bold text-gray-400">Courier is on the way</p>
+      <p class="font-bold">Courier is on the way</p>
     </div>
     <div v-show="seen == 4" class="m-auto w-1/2 mt-20">
-      <p class="font-bold text-gray-400">Food is arriving</p>
+      <p class="font-bold">Food is arriving</p>
     </div>
     <button
       class="

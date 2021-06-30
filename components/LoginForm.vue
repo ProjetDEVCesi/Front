@@ -5,11 +5,8 @@
     </label>
     <form class="bg-white rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
-        <label
-          class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
-        >
-          Username
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+          Email
         </label>
         <input
           id="username"
@@ -23,11 +20,10 @@
             px-3
             text-gray-700
             leading-tight
-            ocus:outline-none
-            focus:shadow-outline
+            focus:outline-none focus:shadow-outline
           "
-          type="text"
-          placeholder="Username"
+          type="email"
+          placeholder="Email"
         />
       </div>
       <div class="mb-6">
