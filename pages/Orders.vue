@@ -6,7 +6,6 @@
     <div v-for="commande in commandes" :key="commande.id">
       <div><OrderCard /></div>
     </div>
-    <OrderCard />
   </div>
 </template>
 
