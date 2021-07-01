@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 h-screen">
+  <div class="bg-gray-200">
     <div class="bg-white pb-2">
       <div class="shadow-md bg-gray-900 w-full h-32">
         <BackButton />
@@ -40,12 +40,15 @@
       </div>
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
-    <p class="font-bold text-2xl mx-8 my-4">Menus</p>
-    <MenuCard />
-    <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
-    <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
-    <MenuCard />
-    <MenuCard />
+    <div class="md:w-2/3 m-auto">
+      <p class="font-bold text-2xl mx-8 my-4">Menus</p>
+      <MenuCard />
+      <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
+      <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
+      <MenuCard />
+      <MenuCard />
+      <div class="h-32 bg-transparent"></div>
+    </div>
   </div>
 </template>
 

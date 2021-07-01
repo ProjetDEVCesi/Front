@@ -14,6 +14,7 @@
           h-32
           top-16
           left-10
+          md:left-36
         "
       >
         <svg
@@ -53,8 +54,8 @@
           />
         </svg>
       </NuxtLink>
-      <p class="font-bold text-2xl mx-8 mt-20">Anna Prismalion</p>
-      <div class="flex mx-6">
+      <p class="font-bold text-2xl mx-8 mt-20 md:ml-36">Anna Prismalion</p>
+      <div class="flex mx-6 md:mx-36">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="inline-flex text-red-500 h-5 w-5"
@@ -73,7 +74,7 @@
       </div>
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
-    <div>
+    <div class="md:w-2/3 m-auto">
       <NuxtLink class="flex items-center mx-8 mt-10" to="/ComingSoon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +227,7 @@
         </svg>
         <div class="font-bold">Sign Out</div>
       </NuxtLink>
-      <div class="m-32"></div>
+      <div class="h-32 bg-transparent"></div>
     </div>
   </div>
 </template>

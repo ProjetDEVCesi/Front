@@ -139,9 +139,12 @@
         </button>
       </div>
     </div>
-    <RestauCard />
-    <RestauCard />
-    <RestauCard />
+    <div class="md:grid md:grid-cols-2">
+      <RestauCard />
+      <RestauCard />
+      <RestauCard />
+    </div>
+    <div class="m-32"></div>
   </div>
 </template>
 

@@ -39,7 +39,9 @@
       "
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
-      <span class="flex items-center p-4 hover:bg-red-500 hover:text-white"
+      <NuxtLink
+        to="/"
+        class="flex items-center p-4 hover:bg-red-500 hover:text-white"
         ><span class="mr-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,9 +58,11 @@
             />
           </svg>
         </span>
-        <span class="font-bold ml-4">Home</span></span
+        <span class="font-bold ml-4">Home</span></NuxtLink
       >
-      <span class="flex items-center p-4 hover:bg-red-500 hover:text-white"
+      <NuxtLink
+        to="/MenuManager"
+        class="flex items-center p-4 hover:bg-red-500 hover:text-white"
         ><span class="mr-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +79,11 @@
             />
           </svg>
         </span>
-        <span class="font-bold ml-4">Menu Manager</span></span
+        <span class="font-bold ml-4">Menu Manager</span></NuxtLink
       >
-      <span class="flex items-center p-4 hover:bg-red-500 hover:text-white"
+      <NuxtLink
+        to="/OrderTracking"
+        class="flex items-center p-4 hover:bg-red-500 hover:text-white"
         ><span class="mr-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +100,7 @@
             />
           </svg>
         </span>
-        <span class="font-bold ml-4">Orders Viewer</span></span
+        <span class="font-bold ml-4">Orders Viewer</span></NuxtLink
       >
     </aside>
   </div>
