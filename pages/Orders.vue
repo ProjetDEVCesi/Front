@@ -4,12 +4,9 @@
       <div class="font-bold text-3xl tracking-widest">ORDERS</div>
     </div>
     <div class="md:w-2/3 m-auto">
-      <OrderCard />
-      <OrderCard />
-      <OrderCard />
-      <OrderCard />
-      <OrderCard />
-      <OrderCard />
+      <div v-for="commande in commandes" :key="commande.id">
+        <div><OrderCard /></div>
+      </div>
     </div>
     <div class="h-32 bg-transparent"></div>
   </div>
@@ -21,6 +18,18 @@ import OrderCard from '@/components/OrderCard'
 export default {
   components: {
     OrderCard,
+  },
+  asyncData({ $axios }, callback) {
+    $axios
+      .get('http://localhost:8004/utilisateur-final/getAllCommands')
+      .then((res) => {
+        callback(null, { commandes: res.data })
+      })
+  },
+  data() {
+    return {
+      commandes: [],
+    }
   },
 }
 </script>
