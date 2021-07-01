@@ -10,4 +10,11 @@ module.exports = {
   plugins: [
     require('@tailwindcss/custom-forms'),
   ],
+  theme: {
+    extend: {
+      translate: {
+        'fullx2': '200%'
+      }
+    }
+  },
 }

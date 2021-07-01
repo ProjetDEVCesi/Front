@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="flex items-center m-auto my-8 h-20 w-4/5">
+    <NuxtLink
+      to="/OrderDetails"
+      class="flex items-center m-auto my-8 h-20 w-4/5"
+    >
       <div>
         <p class="text-2xl font-bold text-red-600 mx-2">Karen</p>
         <p class="text-gray-400 mx-8">2 items</p>
@@ -23,7 +26,7 @@
           />
         </svg>
       </div>
-    </div>
+    </NuxtLink>
     <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
   </div>
 </template>
