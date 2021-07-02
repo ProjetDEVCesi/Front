@@ -28,7 +28,7 @@ export default {
     MenusList,
     MenusDetail,
   },
-  layout: 'NavDesktop',
+  layout: 'NavManager',
   data() {
     return {
       show: 1,

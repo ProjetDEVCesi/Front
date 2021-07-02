@@ -19,6 +19,6 @@ export default {
   components: {
     ClientOrderCard,
   },
-  layout: 'NavDesktop',
+  layout: 'NavManager',
 }
 </script>

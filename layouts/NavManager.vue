@@ -1,16 +1,16 @@
 <template>
   <div>
-    <NavBarHidden />
+    <NavBarManager />
     <Nuxt />
   </div>
 </template>
 
 <script>
-import NavBarHidden from '@/components/NavBarHidden'
+import NavBarManager from '@/components/NavBarManager'
 
 export default {
   components: {
-    NavBarHidden,
+    NavBarManager,
   },
 }
 </script>
