@@ -13,7 +13,13 @@
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-full"></div>
       <OrderElement />
       <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
       <TotalReceipt />
+      <div class="h-32 bg-transparent"></div>
     </div>
     <div
       class="
@@ -46,6 +52,6 @@ export default {
     OrderElement,
     TotalReceipt,
   },
-  layout: 'NavDesktop',
+  layout: 'NavManager',
 }
 </script>
