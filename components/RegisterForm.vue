@@ -7,11 +7,12 @@
       <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
+          for="firstName"
         >
           First Name
         </label>
         <input
+          v-model="firstName"
           type="text"
           class="
             shadow
@@ -25,18 +26,20 @@
             leading-tight
             focus:outline-none focus:shadow-outline
           "
-          name="username"
+          name="firstName"
           placeholder="First Name"
+          required
         />
       </div>
       <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
+          for="lastName"
         >
           Last Name
         </label>
         <input
+          v-model="lastName"
           type="text"
           class="
             shadow
@@ -50,18 +53,17 @@
             leading-tight
             focus:outline-none focus:shadow-outline
           "
-          name="username"
+          name="lastName"
           placeholder="Last Name"
+          required
         />
       </div>
       <div class="mb-4">
-        <label
-          class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
-        >
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
           Email
         </label>
         <input
+          v-model="email"
           type="text"
           class="
             shadow
@@ -77,16 +79,18 @@
           "
           name="email"
           placeholder="Email"
+          required
         />
       </div>
       <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
+          for="password"
         >
           Password
         </label>
         <input
+          v-model="password"
           type="password"
           class="
             shadow
@@ -102,16 +106,18 @@
           "
           name="password"
           placeholder="Password"
+          required
         />
       </div>
       <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
+          for="confirm_password"
         >
           Confirm Password
         </label>
         <input
+          v-model="confirm_password"
           type="password"
           class="
             shadow
@@ -127,6 +133,7 @@
           "
           name="confirm_password"
           placeholder="Confirm Password"
+          required
         />
       </div>
       <button
@@ -140,10 +147,26 @@
           rounded
           focus:outline-none focus:shadow-outline
         "
-        type="button"
+        type="submit"
       >
-        Sign Up
+        Create Account
       </button>
+      <NuxtLink
+        class="
+          bg-grey-500
+          hover:bg-black-700
+          text-black
+          font-bold
+          py-2
+          px-4
+          rounded
+          focus:outline-none focus:shadow-outline
+        "
+        type="button"
+        to="/Login"
+      >
+        Already have an account ?
+      </NuxtLink>
     </form>
   </div>
 </template>

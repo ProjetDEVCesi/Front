@@ -4,10 +4,13 @@
       DELIVER'<span class="text-red-600">EAT</span>
     </div>
     <div class="grid grid-rows-2 gap-2 place-items-center my-48">
-      <button class="shadow rounded bg-red-600 font-bold text-white py-1 w-20">
+      <NuxtLink
+        class="shadow rounded bg-red-600 font-bold text-white py-1 w-20"
+        to="/login"
+      >
         Login
-      </button>
-      <NuxtLink class="underline text-xs text-underline" to="/"
+      </NuxtLink>
+      <NuxtLink class="underline text-xs text-underline" to="/Register"
         >Create account</NuxtLink
       >
     </div>

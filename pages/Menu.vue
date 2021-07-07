@@ -4,8 +4,8 @@
       <div class="shadow-md bg-gray-900 w-full h-32">
         <BackButton />
       </div>
-      <p class="font-bold text-2xl mx-8 mt-4">O'Tacos</p>
-      <p class="text-gray-400 text-xs mx-8 mt-1">Tacos • Fries</p>
+      <p class="font-bold text-2xl mx-8 mt-4">{{ restaurants.name }}</p>
+      <p class="text-gray-400 text-xs mx-8 mt-1">{{ restaurants.category }}</p>
       <div class="flex mx-8 mt-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,20 +28,19 @@
           />
         </svg>
         <p class="inline-flex text-gray-400 text-xs mx-2 h-5">
-          1.10 km away • 0.99€ delivery • 8.00€ minimum • 1 rue Baudimont, 62000
-          Arras • View map
+          {{ restaurants.address }}
         </p>
       </div>
       <div class="inline-flex text-gray-400 text-xs mx-8 mt-4">
-        "Did you ever hear the tragedy of Darth Plagueis The Wise? I thought
-        not. It’s not a story the Jedi would tell you. It’s a Sith legend. Darth
-        Plagueis was a Dark Lord of the Sith, so powerful and so wise he could
-        use the Force to influence the midichlorians to create life…"
+        {{ restaurants.description }}
       </div>
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
     <p class="font-bold text-2xl mx-8 my-4">Menus</p>
-    <MenuCard />
+    <MenuCard
+      :menus="restaurants.menus[0].nom"
+      :articles="restaurants.menus[0].articles[0]"
+    />
     <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
     <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
     <MenuCard />
@@ -59,5 +58,20 @@ export default {
     BackButton,
   },
   layout: 'NoNav',
+  asyncData({ $axios }, callback) {
+    $axios
+      .post('http://localhost:8004/utilisateur-final/getRestaurant', {
+        _id: '60de3e6818418c27fe5d274a',
+      })
+      .then((res) => {
+        callback(null, { restaurants: res.data })
+        console.log(res.data)
+      })
+  },
+  data() {
+    return {
+      restaurants: [],
+    }
+  },
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="m-auto w-3/4">
+    <Notification v-if="error" :message="error" />
     <label class="block text-2xl text-gray-700 text-sm font-bold mx-14 mt-8">
       Log <span class="text-red-500">In</span>
     </label>
@@ -10,6 +11,7 @@
         </label>
         <input
           id="username"
+          v-model="email"
           class="
             shadow
             appearance-none
@@ -24,6 +26,8 @@
           "
           type="email"
           placeholder="Email"
+          required
+          name="email"
         />
       </div>
       <div class="mb-6">
@@ -35,6 +39,7 @@
         </label>
         <input
           id="password"
+          v-model="password"
           class="
             shadow
             appearance-none
@@ -49,11 +54,12 @@
             focus:outline-none focus:shadow-outline
           "
           type="password"
-          placeholder="******************"
+          placeholder="*******"
+          name="password"
+          required
         />
-        <p class="text-red-500 text-xs italic">Please choose a password.</p>
       </div>
-      <div class="flex items-center justify-between">
+      <div class="flex items-center">
         <button
           class="
             bg-red-500
@@ -65,11 +71,58 @@
             rounded
             focus:outline-none focus:shadow-outline
           "
-          type="button"
+          type="submit"
         >
           Sign In
         </button>
+        <NuxtLink
+          class="
+            bg-grey-500
+            hover:bg-black-700
+            text-black
+            font-bold
+            py-2
+            px-4
+            rounded
+            focus:outline-none focus:shadow-outline
+          "
+          type="button"
+          to="/Register"
+        >
+          Create account
+        </NuxtLink>
       </div>
     </form>
   </div>
 </template>
+<script>
+import Notification from '~/components/Notification'
+
+export default {
+  components: {
+    Notification,
+  },
+  data() {
+    return {
+      email: '',
+      password: '',
+      error: null,
+    }
+  },
+  methods: {
+    async logIn() {
+      try {
+        const a = await this.$axios.post('login', {
+          email: this.email,
+          password: this.password,
+        })
+        process.env.WP_API_KEY = a.access_token
+        console.log(a.data)
+        this.$router.push('/')
+      } catch (error) {
+        this.error = error.response.data.message
+      }
+    },
+  },
+}
+</script>

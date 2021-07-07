@@ -139,9 +139,9 @@
         </button>
       </div>
     </div>
-    <RestauCard />
-    <RestauCard />
-    <RestauCard />
+    <div v-for="restaurant in restaurants" :key="restaurant.id">
+      <RestauCard :restaurant="restaurant.name" :address="restaurant.address" />
+    </div>
   </div>
 </template>
 
@@ -152,9 +152,16 @@ export default {
   components: {
     RestauCard,
   },
-
+  asyncData({ $axios }, callback) {
+    $axios
+      .get('http://localhost:8004/utilisateur-final/getAllRestaurants')
+      .then((res) => {
+        callback(null, { restaurants: res.data })
+      })
+  },
   data() {
     return {
+      restaurants: [],
       isActive: true,
     }
   },
