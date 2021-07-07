@@ -13,6 +13,7 @@
         />
       </div>
     </div>
+    <div class="h-32 bg-transparent"></div>
   </div>
 </template>
 

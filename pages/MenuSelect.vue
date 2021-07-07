@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 h-screen">
+  <div class="bg-gray-200">
     <div class="bg-white pb-2">
       <div class="shadow-md bg-gray-900 w-full h-32">
         <XButton />
@@ -13,10 +13,13 @@
       </div>
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
-    <RadioCard />
-    <TextAreaCard />
-    <SelectCard />
-    <CheckboxCard />
+    <div class="md:w-2/3 m-auto">
+      <RadioCard />
+      <TextAreaCard />
+      <SelectCard />
+      <CheckboxCard />
+      <div class="h-32 bg-transparent"></div>
+    </div>
     <div
       class="
         fixed

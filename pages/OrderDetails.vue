@@ -1,18 +1,26 @@
 <template>
   <div>
-    <div class="flex justify-center pl-28 pr-12 py-8">
-      <XButton class="top-32" />
-      <p class="text-2xl font-semibold text-red-600">Karen</p>
-      <div class="flex-1 flex justify-end">
-        <button class="rounded bg-gray-300 text-white font-bold px-2">
-          HELP
-        </button>
+    <div class="md:w-2/3 m-auto">
+      <div class="flex justify-center pl-28 pr-12 py-8">
+        <XButton class="top-32" />
+        <p class="text-2xl font-semibold text-red-600">Karen</p>
+        <div class="flex-1 flex justify-end">
+          <button class="rounded bg-gray-300 text-white font-bold px-2">
+            HELP
+          </button>
+        </div>
       </div>
+      <div class="flex rounded border bg-gray-300 m-auto my-2 w-full"></div>
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <OrderElement />
+      <TotalReceipt />
+      <div class="h-32 bg-transparent"></div>
     </div>
-    <div class="flex rounded border bg-gray-300 m-auto my-2 w-full"></div>
-    <OrderElement />
-    <OrderElement />
-    <TotalReceipt />
     <div
       class="
         fixed
@@ -44,6 +52,6 @@ export default {
     OrderElement,
     TotalReceipt,
   },
-  layout: 'NavDesktop',
+  layout: 'NavManager',
 }
 </script>

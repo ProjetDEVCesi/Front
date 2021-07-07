@@ -72,7 +72,7 @@
         :class="{
           'text-gray-500': selectedTab !== 'segment1',
         }"
-        @click="selectedTab = 'segment1'"
+        @click=";(selectedTab = 'segment1'), $emit('notify1')"
       >
         Overview
       </div>
@@ -93,7 +93,7 @@
         :class="{
           'text-gray-500': selectedTab !== 'segment2',
         }"
-        @click="selectedTab = 'segment2'"
+        @click=";(selectedTab = 'segment2'), $emit('notify2')"
       >
         Menus
       </div>
@@ -114,7 +114,7 @@
         :class="{
           'text-gray-500': selectedTab !== 'segment3',
         }"
-        @click="selectedTab = 'segment3'"
+        @click=";(selectedTab = 'segment3'), $emit('notify3')"
       >
         Items
       </div>
