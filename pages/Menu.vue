@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200">
+  <div class="bg-gray-200 h-screen">
     <div class="bg-white pb-2">
       <div class="shadow-md bg-gray-900 w-full h-32">
         <BackButton />
@@ -42,11 +42,9 @@
     </div>
     <div class="md:w-2/3 m-auto">
       <p class="font-bold text-2xl mx-8 my-4">Menus</p>
-      <MenuCard />
-      <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
-      <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
-      <MenuCard />
-      <MenuCard />
+      <div v-for="menu in menus" :key="menu.id">
+        <MenuCard :price="menu.price" />
+      </div>
       <div class="h-32 bg-transparent"></div>
     </div>
   </div>
@@ -62,5 +60,15 @@ export default {
     BackButton,
   },
   layout: 'NoNav',
+  asyncData({ $axios }, callback) {
+    $axios.get('http://localhost:8001/menus/getAllMenus').then((res) => {
+      callback(null, { menus: res.data })
+    })
+  },
+  data() {
+    return {
+      menus: [],
+    }
+  },
 }
 </script>

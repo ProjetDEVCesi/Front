@@ -6,9 +6,9 @@
       >
         <div class="bg-gray-200 col-span-2 rounded w-4/5 h-full"></div>
         <div class="justify-self-start col-span-2">
-          <p class="font-bold">O'Tacos - Arras</p>
-          <p class="text-gray-500 text-sm my-4">5 items • 39.17€</p>
-          <p class="text-gray-500 text-sm">Jun 13 • Completed</p>
+          <p class="font-bold">{{ restaurant }}</p>
+          <p class="text-gray-500 text-sm my-4">{{ price }}€</p>
+          <p class="text-gray-500 text-sm">Jun 13 • {{ status }}</p>
         </div>
         <button
           class="
@@ -28,3 +28,13 @@
     <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    restaurant: { type: String, default: 'Unknown' },
+    price: { type: String, default: '???' },
+    status: { type: String, default: 'Error on status' },
+  },
+}
+</script>

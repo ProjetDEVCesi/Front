@@ -5,7 +5,11 @@
     </div>
     <div class="md:w-2/3 m-auto">
       <div v-for="commande in commandes" :key="commande.id">
-        <div><OrderCard /></div>
+        <OrderCard
+          :restaurant="commande.restaurant_name"
+          :price="commande.price"
+          :status="commande.status"
+        />
       </div>
     </div>
     <div class="h-32 bg-transparent"></div>
