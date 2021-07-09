@@ -36,27 +36,16 @@
       </div>
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
-<<<<<<< HEAD
     <p class="font-bold text-2xl mx-8 my-4">Menus</p>
-    <MenuCard
-      :menus="restaurants.menus[0].nom"
-      :articles="restaurants.menus[0].articles[0]"
-    />
-    <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
-    <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
-    <MenuCard />
-    <MenuCard />
-=======
-    <div class="md:w-2/3 m-auto">
-      <p class="font-bold text-2xl mx-8 my-4">Menus</p>
-      <MenuCard />
-      <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
-      <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
-      <MenuCard />
-      <MenuCard />
-      <div class="h-32 bg-transparent"></div>
+    <div v-for="menu in restaurants.menus" :key="menu.nom">
+      {{ menu }}
+      <MenuCard
+        :menus="menu.nom"
+        :articles="menu.articles"
+        :price="menu.price"
+      />
     </div>
->>>>>>> 407920b36ba914c739062d9f9048d2eab72250c1
+    <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
   </div>
 </template>
 

@@ -3,9 +3,9 @@
     <div class="shadow rounded bg-white mx-1 my-2 p-4">
       <p class="font-bold">{{ menus }}</p>
       <p class="text-gray-400 text-xs my-4">
-        {{ menus.articles }}
+        {{ articles }}
       </p>
-      <p class="text-red-500 text-sm">34.00 €</p>
+      <p class="text-red-500 text-sm">{{ price }}</p>
     </div>
   </NuxtLink>
 </template>
@@ -13,10 +13,10 @@
 export default {
   props: {
     menus: {
-      type: Array,
+      type: String,
       required: true,
       // eslint-disable-next-line prettier/prettier
-      default: () => [],
+      default: () => "",
     },
     articles: {
       type: String,
@@ -24,6 +24,12 @@ export default {
       // eslint-disable-next-line prettier/prettier
       default: () => '',
     },
+    price: {
+      type: Number,
+      required: true,
+      default: () => 0,
+    },
+    
   },
 }
 </script>

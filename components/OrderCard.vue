@@ -10,21 +10,8 @@
           <p class="text-gray-500 text-sm my-4">
             {{ items.length }} items • {{ price }} €
           </p>
-          <p class="text-gray-500 text-sm">Jun 13 • {{ status }}</p>
+          <p class="text-gray-500 text-sm">{{ status }}</p>
         </div>
-        <button
-          class="
-            bg-gray-400
-            text-white
-            font-bold
-            justify-center
-            rounded-full
-            w-20
-            h-8
-          "
-        >
-          Reorder
-        </button>
       </div>
     </div>
     <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
