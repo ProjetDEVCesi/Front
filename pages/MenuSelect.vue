@@ -56,5 +56,6 @@ export default {
     XButton,
   },
   layout: 'NoNav',
+  middleware: ['user-auth'],
 }
 </script>

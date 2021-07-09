@@ -36,7 +36,6 @@
       </div>
       <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
     </div>
-<<<<<<< HEAD
     <p class="font-bold text-2xl mx-8 my-4">Menus</p>
     <MenuCard
       :menus="restaurants.menus[0].nom"
@@ -46,17 +45,6 @@
     <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
     <MenuCard />
     <MenuCard />
-=======
-    <div class="md:w-2/3 m-auto">
-      <p class="font-bold text-2xl mx-8 my-4">Menus</p>
-      <MenuCard />
-      <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
-      <p class="font-bold text-2xl mx-8 my-4">Pizza CLassiques</p>
-      <MenuCard />
-      <MenuCard />
-      <div class="h-32 bg-transparent"></div>
-    </div>
->>>>>>> 407920b36ba914c739062d9f9048d2eab72250c1
   </div>
 </template>
 
@@ -77,7 +65,6 @@ export default {
       })
       .then((res) => {
         callback(null, { restaurants: res.data })
-        console.log(res.data)
       })
   },
   data() {

@@ -117,7 +117,8 @@ export default {
           password: this.password,
         })
         process.env.WP_API_KEY = a.access_token
-        console.log(a.data)
+        this.$store.commit('changeUser', {prenom: a.prenom, nom: a.nom, type: a.type})
+        this.$store.commit('changeToken',a.access_token)
         this.$router.push('/')
       } catch (error) {
         this.error = error.response.data.message

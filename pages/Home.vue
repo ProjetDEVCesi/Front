@@ -152,6 +152,7 @@ export default {
   components: {
     RestauCard,
   },
+  middleware: ['user-auth', 'utilisateur'],
   asyncData({ $axios }, callback) {
     $axios
       .get('http://localhost:8004/utilisateur-final/getAllRestaurants')
@@ -165,7 +166,6 @@ export default {
       isActive: true,
     }
   },
-
   methods: {
     toggle() {
       if (!this.isActive) {

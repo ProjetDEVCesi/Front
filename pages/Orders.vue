@@ -24,6 +24,7 @@ export default {
   components: {
     OrderCard,
   },
+  middleware: ['user-auth', 'utilisateur'],
   asyncData({ $axios }, callback) {
     $axios
       .get('http://localhost:8004/utilisateur-final/getAllCommands')

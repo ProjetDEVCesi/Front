@@ -20,5 +20,6 @@ export default {
     CourrierOrderCard,
   },
   layout: 'NavCourrier',
+  middleware: ['user-auth', 'livreur'],
 }
 </script>
