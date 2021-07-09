@@ -1,22 +1,25 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import menus from '../api/menus';
-
 export const state = () => ({
-    counter: 0
+  authenticated: true,
+  user: {
+    prenom: 'prenom',
+    nom: 'nom',
+    type: 'utilisateur',
+    token: '',
+  },
 })
-
 export const mutations = {
-    add(state, text) {
-        state.list.push({
-            text,
-            done: false
-        })
-    },
-    remove(state, { todo }) {
-        state.list.splice(state.list.IndexOf(todo), 1)
-    },
-    toggle(todo) {
-        todo.done = !todo.done
-    }
+  toggle(state) {
+    state.authenticated = !state.authenticated
+  },
+  changeUser(state, user) {
+    state.user = user
+  },
+  setToken(state, token) {
+    state.user.token = token
+  },
+}
+export const getters = {
+  getToken(state) {
+    return state.token
+  }
 }

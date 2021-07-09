@@ -231,3 +231,12 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  middleware: ['user-auth'],
+  data() {
+    return {}
+  },
+}
+</script>

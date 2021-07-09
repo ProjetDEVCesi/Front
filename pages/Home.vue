@@ -140,12 +140,9 @@
       </div>
     </div>
     <div class="md:grid md:grid-cols-2">
-      <div v-for="restaurant in restaurants" :key="restaurant.id">
-        <RestauCard />
-        <p>{{ restaurant.name }}</p>
-      </div>
+    <div v-for="restaurant in restaurants" :key="restaurant.id">
+      <RestauCard :restaurant="restaurant.name" :address="restaurant.address" />
     </div>
-    <div class="m-32"></div>
   </div>
 </template>
 
@@ -156,6 +153,7 @@ export default {
   components: {
     RestauCard,
   },
+  middleware: ['user-auth', 'utilisateur'],
   asyncData({ $axios }, callback) {
     $axios
       .get('http://localhost:8004/utilisateur-final/getAllRestaurants')

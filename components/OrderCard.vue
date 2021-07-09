@@ -7,34 +7,43 @@
         <div class="bg-gray-200 col-span-2 rounded w-4/5 h-full"></div>
         <div class="justify-self-start col-span-2">
           <p class="font-bold">{{ restaurant }}</p>
-          <p class="text-gray-500 text-sm my-4">{{ price }}€</p>
-          <p class="text-gray-500 text-sm">Jun 13 • {{ status }}</p>
+          <p class="text-gray-500 text-sm my-4">
+            {{ items.length }} items • {{ price }} €
+          </p>
+          <p class="text-gray-500 text-sm">{{ status }}</p>
         </div>
-        <button
-          class="
-            bg-gray-400
-            text-white
-            font-bold
-            justify-center
-            rounded-full
-            w-20
-            h-8
-          "
-        >
-          Reorder
-        </button>
       </div>
     </div>
     <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
   </div>
 </template>
-
 <script>
 export default {
   props: {
-    restaurant: { type: String, default: 'Unknown' },
-    price: { type: String, default: '???' },
-    status: { type: String, default: 'Error on status' },
+    restaurant: {
+      type: String,
+      required: true,
+      // eslint-disable-next-line prettier/prettier
+      default: () => 'Undefined',
+    },
+    status: {
+      type: String,
+      required: true,
+      // eslint-disable-next-line prettier/prettier
+      default: () => 'Undefined',
+    },
+    price: {
+      type: Number,
+      required: true,
+      // eslint-disable-next-line prettier/prettier
+      default: () => 0,
+    },
+    items: {
+      type: Array,
+      required: true,
+      // eslint-disable-next-line prettier/prettier
+      default: () => ['void'],
+    },
   },
 }
 </script>
