@@ -17,6 +17,7 @@
     <div class="flex rounded border bg-gray-300 m-auto my-2 w-5/6"></div>
   </div>
 </template>
+
 <script>
 export default {
   props: {

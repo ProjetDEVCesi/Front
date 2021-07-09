@@ -140,8 +140,12 @@
       </div>
     </div>
     <div class="md:grid md:grid-cols-2">
-    <div v-for="restaurant in restaurants" :key="restaurant.id">
-      <RestauCard :restaurant="restaurant.name" :address="restaurant.address" />
+      <div v-for="restaurant in restaurants" :key="restaurant.id">
+        <RestauCard
+          :restaurant="restaurant.name"
+          :address="restaurant.address"
+        />
+      </div>
     </div>
   </div>
 </template>
