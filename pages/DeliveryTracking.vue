@@ -95,6 +95,7 @@ export default {
     BackButton,
   },
   layout: 'NoNav',
+  middleware: ['user-auth', 'utilisateur'],
   data() {
     return {
       seen: 1,

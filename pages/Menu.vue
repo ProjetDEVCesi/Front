@@ -66,7 +66,6 @@ export default {
       })
       .then((res) => {
         callback(null, { restaurants: res.data })
-        console.log(res.data)
       })
   },
   data() {

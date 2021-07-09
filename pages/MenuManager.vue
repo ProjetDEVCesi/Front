@@ -29,6 +29,7 @@ export default {
     MenusDetail,
   },
   layout: 'NavManager',
+  middleware: ['user-auth'],
   data() {
     return {
       show: 1,

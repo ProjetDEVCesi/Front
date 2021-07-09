@@ -53,5 +53,6 @@ export default {
     TotalReceipt,
   },
   layout: 'NavManager',
+  middleware: ['user-auth', 'utilisateur'],
 }
 </script>

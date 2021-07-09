@@ -20,5 +20,6 @@ export default {
     ClientOrderCard,
   },
   layout: 'NavManager',
+  middleware: ['user-auth', 'utilisateur'],
 }
 </script>
