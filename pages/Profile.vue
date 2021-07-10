@@ -32,7 +32,7 @@
           />
         </svg>
       </div>
-      <NuxtLink to="#">
+      <NuxtLink to="/ProfileEdit">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="absolute mt-4 right-14 h-12 w-12"

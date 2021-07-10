@@ -16,7 +16,7 @@ export default {
       type: String,
       required: true,
       // eslint-disable-next-line prettier/prettier
-      default: () => "",
+      default: () => '',
     },
     articles: {
       type: String,
@@ -29,7 +29,6 @@ export default {
       required: true,
       default: () => 0,
     },
-    
   },
 }
 </script>

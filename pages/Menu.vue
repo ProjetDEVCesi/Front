@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200">
+  <div class="bg-gray-200 h-screen">
     <div class="bg-white pb-2">
       <div class="shadow-md bg-gray-900 w-full h-32">
         <BackButton />
