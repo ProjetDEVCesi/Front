@@ -1,18 +1,34 @@
 <template>
   <div class="m-auto w-3/4">
-    <label class="block text-2xl text-gray-700 text-sm font-bold mx-14 mt-8">
-      Sign <span class="text-red-500">Up</span>
-    </label>
-    <form class="bg-white rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="">
-      <div class="mb-4">
+    <BackButton />
+    <div class="flex items-end mb-10 md:w-1/2 ml-10 md:mx-auto mt-4">
+      <p class="font-bold text-2xl mx-8 mt-4">Profile Editor</p>
+      <button class="rounded shadow w-10 h-10 mx-auto">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="text-green-500 h-6 w-6 m-auto"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+          />
+        </svg>
+      </button>
+    </div>
+    <form>
+      <div class="mb-4 md:w-1/2 m-auto">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="firstName"
+          for="username"
         >
           First Name
         </label>
         <input
-          v-model="firstName"
           type="text"
           class="
             shadow
@@ -28,10 +44,9 @@
           "
           name="firstName"
           placeholder="First Name"
-          required
         />
       </div>
-      <div class="mb-4">
+      <div class="mb-4 md:w-1/2 m-auto">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
           for="lastName"
@@ -39,7 +54,6 @@
           Last Name
         </label>
         <input
-          v-model="lastName"
           type="text"
           class="
             shadow
@@ -55,16 +69,17 @@
           "
           name="lastName"
           placeholder="Last Name"
-          required
         />
       </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-          Email
+      <div class="mb-4 md:w-1/2 m-auto">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="username"
+        >
+          Mail
         </label>
         <input
-          v-model="email"
-          type="text"
+          type="mail"
           class="
             shadow
             appearance-none
@@ -77,20 +92,18 @@
             leading-tight
             focus:outline-none focus:shadow-outline
           "
-          name="email"
-          placeholder="Email"
-          required
+          name="mail"
+          placeholder="Mail"
         />
       </div>
-      <div class="mb-4">
+      <div class="mb-4 md:w-1/2 m-auto">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="password"
+          for="username"
         >
-          Password
+          New Password
         </label>
         <input
-          v-model="password"
           type="password"
           class="
             shadow
@@ -104,20 +117,18 @@
             leading-tight
             focus:outline-none focus:shadow-outline
           "
-          name="password"
-          placeholder="Password"
-          required
+          name="newPass"
+          placeholder="New Password"
         />
       </div>
-      <div class="mb-4">
+      <div class="mb-4 md:w-1/2 m-auto">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
-          for="confirm_password"
+          for="confirmNewPass"
         >
-          Confirm Password
+          Confirm New Password
         </label>
         <input
-          v-model="confirm_password"
           type="password"
           class="
             shadow
@@ -131,42 +142,21 @@
             leading-tight
             focus:outline-none focus:shadow-outline
           "
-          name="confirm_password"
-          placeholder="Confirm Password"
-          required
+          name="confirmNewPass"
+          placeholder="Confirm New Password"
         />
       </div>
-      <button
-        class="
-          bg-red-500
-          hover:bg-red-700
-          text-white
-          font-bold
-          py-2
-          px-4
-          rounded
-          focus:outline-none focus:shadow-outline
-        "
-        type="submit"
-      >
-        Create Account
-      </button>
-      <NuxtLink
-        class="
-          bg-grey-500
-          hover:bg-black-700
-          text-black
-          font-bold
-          py-2
-          px-4
-          rounded
-          focus:outline-none focus:shadow-outline
-        "
-        type="button"
-        to="/Login"
-      >
-        Already have an account ?
-      </NuxtLink>
     </form>
   </div>
 </template>
+
+<script>
+import BackButton from '@/components/BackButton'
+
+export default {
+  components: {
+    BackButton,
+  },
+  layout: 'NoNav',
+}
+</script>

@@ -23,7 +23,7 @@ export default {
       type: String,
       required: true,
       // eslint-disable-next-line prettier/prettier
-      default: () => "",
+      default: () => '',
     },
     articles: {
       type: Array,
