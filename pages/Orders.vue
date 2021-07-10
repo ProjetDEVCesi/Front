@@ -25,9 +25,11 @@ export default {
     OrderCard,
   },
   middleware: ['user-auth', 'utilisateur'],
-  asyncData({ $axios }, callback) {
+  asyncData({ $axios, store }, callback) {
     $axios
-      .get('http://localhost:8004/utilisateur-final/getAllCommands')
+      .post('http://localhost:8004/utilisateur-final/getCommand', {
+        customerId: store.state.user.id,
+      })
       .then((res) => {
         callback(null, { commandes: res.data })
       })

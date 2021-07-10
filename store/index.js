@@ -6,6 +6,7 @@ export const defaultState = () => {
       nom: 'Arcelin',
       type: 'utilisateur',
       token: '',
+      id: 1,
     },
   }
 }

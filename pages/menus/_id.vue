@@ -58,17 +58,10 @@ export default {
     BackButton,
   },
   layout: 'NoNav',
-  props: {
-    id: {
-      type: String,
-      required: true,
-      default: '',
-    },
-  },
-  asyncData({ $axios }, callback) {
-    $axios
+  async asyncData({ $axios, params }, callback) {
+    await $axios
       .post('http://localhost:8004/utilisateur-final/getRestaurant', {
-        _id: this.$route.params,
+        _id: params.id,
       })
       .then((res) => {
         callback(null, { restaurants: res.data })
@@ -77,7 +70,11 @@ export default {
   data() {
     return {
       restaurants: [],
+      restauId: '',
     }
+  },
+  created() {
+    this.restauId = this.$route.params
   },
 }
 </script>
