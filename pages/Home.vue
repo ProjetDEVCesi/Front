@@ -140,7 +140,11 @@
       </div>
     </div>
     <div v-for="restaurant in restaurants" :key="restaurant.id">
-      <RestauCard :restaurant="restaurant.name" :address="restaurant.address" />
+      <RestauCard
+        :id="restaurant.id"
+        :restaurant="restaurant.name"
+        :address="restaurant.address"
+      />
     </div>
   </div>
 </template>

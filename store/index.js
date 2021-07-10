@@ -21,5 +21,5 @@ export const mutations = {
 export const getters = {
   getToken(state) {
     return state.token
-  }
+  },
 }
