@@ -3,24 +3,8 @@
     <BackButton />
     <div class="flex items-end mb-10 md:w-1/2 ml-10 md:mx-auto mt-4">
       <p class="font-bold text-2xl mx-8 mt-4">Profile Editor</p>
-      <button class="rounded shadow w-10 h-10 mx-auto">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="text-green-500 h-6 w-6 m-auto"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
-          />
-        </svg>
-      </button>
     </div>
-    <form>
+    <form @submit.prevent="editAccount">
       <div class="mb-4 md:w-1/2 m-auto">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
@@ -145,6 +129,26 @@
           name="confirmNewPass"
           placeholder="Confirm New Password"
         />
+        <div class="flex">
+          <button
+            class="
+              bg-red-500
+              hover:bg-red-700
+              text-white
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+              m-5
+              item-center
+              w-full
+            "
+            type="submit"
+          >
+            Enregistrer les modifications
+          </button>
+        </div>
       </div>
     </form>
   </div>
@@ -158,5 +162,40 @@ export default {
     BackButton,
   },
   layout: 'NoNav',
+  middleware: ['user-auth'],
+  // asyncData({ $axios }, callback) {
+  //   $axios
+  //     .get('http://localhost:8004/utilisateur-final/getAllRestaurants')
+  //     .then((res) => {
+  //       callback(null, { restaurants: res.data })
+  //     })
+  // },
+  data() {
+    return {
+      prenom: '',
+      nom: '',
+      email: '',
+      password: '',
+      comfirmPassword: '',
+    }
+  },
+  methods: {
+    async editAccount() {
+      if (this.password !== this.comfirmPassword) {
+        return
+      }
+      if (this.nom === '' && this.email === '' && this.prenom === '') {
+        return
+      }
+      await this.$axios.$post('http://localhost:8004/users/update', {
+        prenom: this.prenom,
+        nom: this.nom,
+        email: this.email,
+        password: this.password,
+      })
+
+      return this.$router.go(-1)
+    },
+  },
 }
 </script>
