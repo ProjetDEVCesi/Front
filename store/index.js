@@ -1,6 +1,6 @@
 export const defaultState = () => {
   return {
-    authenticated: false,
+    authenticated: true,
     user: {
       prenom: 'prenom',
       nom: 'nom',
