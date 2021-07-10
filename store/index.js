@@ -2,8 +2,8 @@ export const defaultState = () => {
   return {
     authenticated: true,
     user: {
-      prenom: 'prenom',
-      nom: 'nom',
+      prenom: 'Félix',
+      nom: 'Arcelin',
       type: 'utilisateur',
       token: '',
     },
