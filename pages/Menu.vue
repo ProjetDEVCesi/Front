@@ -68,7 +68,7 @@ export default {
   asyncData({ $axios }, callback) {
     $axios
       .post('http://localhost:8004/utilisateur-final/getRestaurant', {
-        _id: '60de3e6818418c27fe5d274a',
+        _id: this.$route.params,
       })
       .then((res) => {
         callback(null, { restaurants: res.data })

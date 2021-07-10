@@ -239,5 +239,8 @@ import { mapState } from 'vuex'
 export default {
   middleware: ['user-auth'],
   computed: mapState(['user']),
+  created() {
+    console.log(this.$route)
+  },
 }
 </script>

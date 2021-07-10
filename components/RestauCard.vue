@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/Menu">
+  <NuxtLink to="{ name: 'Menu', params: { id: getRestauId() }}">
     <div
       class="relative shadow-md rounded-lg bg-gray-200 m-auto my-8 h-40 w-4/5"
     >
@@ -33,6 +33,16 @@ export default {
       required: true,
       // eslint-disable-next-line prettier/prettier
       default: () => 'Undefined',
+    },
+    restaurantId: {
+      type: Number,
+      required: true,
+      default: () => 1,
+    },
+  },
+  computed: {
+    getRestauId() {
+      return this.restaurantId
     },
   },
 }
