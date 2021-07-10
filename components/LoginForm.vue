@@ -4,7 +4,7 @@
     <label class="block text-2xl text-gray-700 text-sm font-bold mx-14 mt-8">
       Log <span class="text-red-500">In</span>
     </label>
-    <form class="bg-white rounded px-8 pt-6 pb-8 mb-4">
+    <form class="bg-white rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="logIn">
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
           Email
@@ -106,6 +106,9 @@ export default {
     return {
       email: '',
       password: '',
+      prenom: '',
+      nom: '',
+      type: '',
       error: null,
     }
   },
@@ -116,12 +119,16 @@ export default {
           email: this.email,
           password: this.password,
         })
-        process.env.WP_API_KEY = a.access_token
-        this.$store.commit('changeUser', {prenom: a.prenom, nom: a.nom, type: a.type})
-        this.$store.commit('changeToken',a.access_token)
-        this.$router.push('/')
+        this.$store.commit('changeUser', {
+          prenom: a.prenom,
+          nom: a.nom,
+          type: a.type,
+          token: a.access_token,
+        })
+        this.$store.commit('toggle')
+        this.$router.push('/Home')
       } catch (error) {
-        this.error = error.response.data.message
+        this.error = error
       }
     },
   },

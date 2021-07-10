@@ -3,7 +3,7 @@
     <label class="block text-2xl text-gray-700 text-sm font-bold mx-14 mt-8">
       Sign <span class="text-red-500">Up</span>
     </label>
-    <form class="bg-white rounded px-8 pt-6 pb-8 mb-4">
+    <form class="bg-white rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="">
       <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"

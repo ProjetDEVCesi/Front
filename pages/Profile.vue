@@ -54,7 +54,9 @@
           />
         </svg>
       </NuxtLink>
-      <p class="font-bold text-2xl mx-8 mt-20 md:ml-36">Anna Prismalion</p>
+      <p class="font-bold text-2xl mx-8 mt-20 md:ml-36">
+        {{ user.prenom }}
+      </p>
       <div class="flex mx-6 md:mx-36">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -233,10 +235,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   middleware: ['user-auth'],
-  data() {
-    return {}
-  },
+  computed: mapState(['user']),
 }
 </script>

@@ -1,12 +1,15 @@
-export const state = () => ({
-  authenticated: true,
-  user: {
-    prenom: 'prenom',
-    nom: 'nom',
-    type: 'utilisateur',
-    token: '',
-  },
-})
+export const defaultState = () => {
+  return {
+    authenticated: false,
+    user: {
+      prenom: 'prenom',
+      nom: 'nom',
+      type: 'utilisateur',
+      token: '',
+    },
+  }
+}
+export const state = defaultState()
 export const mutations = {
   toggle(state) {
     state.authenticated = !state.authenticated
@@ -17,9 +20,18 @@ export const mutations = {
   setToken(state, token) {
     state.user.token = token
   },
+  clear: (state) => Object.assign(state, defaultState()),
 }
 export const getters = {
   getToken(state) {
     return state.token
-  }
+  },
+  getUser(state) {
+    return state.user
+  },
+}
+export const actions = {
+  changeAuth(commit) {
+    commit('toggle')
+  },
 }
