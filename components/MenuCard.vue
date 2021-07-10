@@ -3,9 +3,16 @@
     <div class="shadow rounded bg-white mx-1 my-2 p-4">
       <p class="font-bold">{{ menus }}</p>
       <p class="text-gray-400 text-xs my-4">
-        {{ articles }}
+        Plat :
+        {{ articles[0].plat }}
+        <br />Accompagnement :
+        {{ articles[0].Accompagnement }}
+        <br />Boisson :
+        {{ articles[0].Boisson }}
+        <br />Dessert :
+        {{ articles[0].Dessert }}
       </p>
-      <p class="text-red-500 text-sm">{{ price }}</p>
+      <p class="text-red-500 text-sm">{{ price }} €</p>
     </div>
   </NuxtLink>
 </template>
@@ -19,10 +26,10 @@ export default {
       default: () => '',
     },
     articles: {
-      type: String,
+      type: Array,
       required: true,
       // eslint-disable-next-line prettier/prettier
-      default: () => '',
+      default: () => [],
     },
     price: {
       type: Number,

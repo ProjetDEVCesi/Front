@@ -38,7 +38,6 @@
     </div>
     <p class="font-bold text-2xl mx-8 my-4">Menus</p>
     <div v-for="menu in restaurants.menus" :key="menu.nom">
-      {{ menu }}
       <MenuCard
         :menus="menu.nom"
         :articles="menu.articles"
@@ -59,6 +58,13 @@ export default {
     BackButton,
   },
   layout: 'NoNav',
+  props: {
+    id: {
+      type: String,
+      required: true,
+      default: '',
+    },
+  },
   asyncData({ $axios }, callback) {
     $axios
       .post('http://localhost:8004/utilisateur-final/getRestaurant', {
