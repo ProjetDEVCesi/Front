@@ -42,6 +42,7 @@
         :menus="menu.nom"
         :articles="menu.articles"
         :price="menu.price"
+        @addToCartParent="addItemCart($event, menu)"
       />
     </div>
     <div class="bg-gray-300 m-auto my-4 w-full h-1"></div>
@@ -51,6 +52,7 @@
 <script>
 import MenuCard from '@/components/MenuCard'
 import BackButton from '@/components/BackButton'
+import CartStore from '@/store/cart'
 
 export default {
   components: {
@@ -75,6 +77,16 @@ export default {
   },
   created() {
     this.restauId = this.$route.params
+  },
+  methods: {
+    addItemCart(quantity, menu) {
+      console.log(this.restaurants)
+      CartStore.addItemsToCart(parseInt(quantity), menu, this.restaurants)
+      console.log(CartStore.items)
+    },
+    removeItemCart() {
+      // console.log(this.$store.)
+    },
   },
 }
 </script>

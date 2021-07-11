@@ -1,5 +1,6 @@
+import AuthStore from '~/store/auth'
 export default function ({ store, redirect }) {
-  if (store.state.user.type !== 'utilisateur') {
+  if (AuthStore.user.type !== 'utilisateur') {
     return redirect('/')
   }
 }
