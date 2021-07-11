@@ -212,7 +212,7 @@
         </svg>
         <div class="font-bold">Help</div>
       </NuxtLink>
-      <NuxtLink class="flex items-center mx-8 mt-10" to="/ComingSoon">
+      <div class="flex items-center mx-8 mt-10" @click="logOut">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="mx-4 h-12 w-12"
@@ -228,7 +228,7 @@
           />
         </svg>
         <div class="font-bold">Sign Out</div>
-      </NuxtLink>
+      </div>
       <div class="h-32 bg-transparent"></div>
     </div>
   </div>
@@ -239,8 +239,19 @@ import { mapState } from 'vuex'
 export default {
   middleware: ['user-auth'],
   computed: mapState(['user']),
-  created() {
-    console.log(this.$route)
+  created() {},
+  methods: {
+    logOut() {
+      const LogOutUser = {
+        prenom: '',
+        nom: '',
+        type: '',
+        token: '',
+      }
+      this.$store.commit('changeUser', LogOutUser)
+      this.$store.commit('toggle')
+      this.$router.push('/')
+    },
   },
 }
 </script>

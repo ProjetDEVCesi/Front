@@ -115,18 +115,24 @@ export default {
   methods: {
     async logIn() {
       try {
-        const a = await this.$axios.post('login', {
+        const a = await this.$axios.$post('http://localhost:8004/login', {
           email: this.email,
           password: this.password,
         })
-        this.$store.commit('changeUser', {
+        const newUser = {
           prenom: a.prenom,
           nom: a.nom,
           type: a.type,
           token: a.access_token,
-        })
+        }
+        this.$store.commit('changeUser', newUser)
         this.$store.commit('toggle')
-        this.$router.push('/Home')
+
+        if (this.$store.state.user.type === 'utilisateur') {
+          this.$router.push('/Home')
+        } else if (this.$store.state.user.type === 'livreur') {
+          this.$router.push('/CourrierHome')
+        }
       } catch (error) {
         this.error = error
       }

@@ -7,7 +7,10 @@
     <div class="grid grid-cols-5 gap-1 m-auto mt-20 w-2/3">
       <div
         class="rounded-l bg-red-500 w-full h-4"
-        :class="{ 'col-span-2 bg-red-500 animate-pulse': seen == 1 }"
+        :class="{
+          'col-span-2 bg-red-500 animate-pulse':
+            status == 'en cours de validation',
+        }"
       ></div>
       <div
         class="bg-gray-300 w-full h-4"
@@ -31,7 +34,7 @@
         }"
       ></div>
     </div>
-    <div v-show="seen == 1" class="m-auto w-1/2 mt-10">
+    <div v-show="status == 'en cours de validation'" class="m-auto w-1/2 mt-10">
       <div>
         <p class="font-bold">Confirming order with restaurant</p>
         <p class="text-gray-400 text-xs my-4">15 rue du Sésame</p>
@@ -50,29 +53,18 @@
         </button>
       </div>
     </div>
-    <div v-show="seen == 2" class="m-auto w-1/2 mt-20">
+    <div
+      v-show="status == 'commande en préparation'"
+      class="m-auto w-1/2 mt-20"
+    >
       <p class="font-bold">Food is being prepared</p>
     </div>
-    <div v-show="seen == 3" class="m-auto w-1/2 mt-20">
+    <div v-show="status == 'livreur est en chemin'" class="m-auto w-1/2 mt-20">
       <p class="font-bold">Courier is on the way</p>
     </div>
-    <div v-show="seen == 4" class="m-auto w-1/2 mt-20">
+    <div v-show="status == 'commande en chemin'" class="m-auto w-1/2 mt-20">
       <p class="font-bold">Food is arriving</p>
     </div>
-    <button
-      class="
-        bg-red-400
-        text-white
-        font-bold
-        justify-center
-        rounded-full
-        px-4
-        h-8
-      "
-      @click="step"
-    >
-      Test
-    </button>
     <div class="fixed border shadow-md bg-gray-600 w-full h-52 bottom-0 p-10">
       <div class="flex items-end w-full">
         <p class="text-white text-6xl mr-8">
@@ -96,9 +88,17 @@ export default {
   },
   layout: 'NoNav',
   middleware: ['user-auth', 'utilisateur'],
+  props: {
+    status: {
+      type: String,
+      required: true,
+      default: () => 'en cours de préparation',
+    },
+  },
   data() {
     return {
       seen: 1,
+      statut: 'en cours de validation',
     }
   },
   methods: {

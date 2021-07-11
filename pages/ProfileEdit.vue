@@ -13,6 +13,7 @@
           First Name
         </label>
         <input
+          v-model="prenom"
           type="text"
           class="
             shadow
@@ -38,6 +39,7 @@
           Last Name
         </label>
         <input
+          v-model="nom"
           type="text"
           class="
             shadow
@@ -63,6 +65,7 @@
           Mail
         </label>
         <input
+          v-model="email"
           type="mail"
           class="
             shadow
@@ -88,6 +91,7 @@
           New Password
         </label>
         <input
+          v-model="password"
           type="password"
           class="
             shadow
@@ -113,6 +117,7 @@
           Confirm New Password
         </label>
         <input
+          v-model="comfirmPassword"
           type="password"
           class="
             shadow
